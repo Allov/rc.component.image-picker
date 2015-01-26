@@ -1,0 +1,28 @@
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <a class="navbar-brand" data-bind="html: title"></a>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Sélectionnez une image</h1>
+    <div class="form-group" data-bind="formGroupValidationCssClass : content().image.formGroupValidationCssClass">
+        <label for="image"></label>
+        <input id="image" name="image" type="text" class="form-control" data-bind="value: content().image, valueUpdate: 'afterkeydown'" />
+        <span class="help-block" data-bind="helpBlockValidationMessage: content().image.helpBlockValidationMessage"></span>
+    </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom navbar-inverse">
+    <div class="container">
+        <button class="btn btn-default post-button pull-left" data-bind="click: close, clickBubble: false">
+            <i class="fa fa-arrow-left"></i>
+            <span>Fermer</span>
+        </button>
+
+        <button class="btn btn-default btn-success post-button pull-left" data-bind="click: save, clickBubble: false">
+            <i class="fa fa-arrow-left"></i>
+            <span>Enregistrer</span>
+        </button>
+    </div>
+</nav>
