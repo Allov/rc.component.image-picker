@@ -1,0 +1,20 @@
+{
+  "name": "rc.component.image-picker",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Allov/rc.component.image-picker",
+  "authors": [
+    "Allov"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "rc.framework.js": "~0.1.16",
+    "rc.knockout.utilities": "~0.1.2"
+  }
+}
