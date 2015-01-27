@@ -9,8 +9,8 @@
     }
 */
 
-define(['text!./image-picker.html', 'jquery', 'framework-utilities', 'framework', 'knockout'],
-    function(template, $, utilities, framework, ko) {
+define(['text!./image-picker.html', 'jquery', 'knockout-utilities', 'framework', 'knockout'],
+    function(template, $, knockoutUtilities, framework, ko) {
         "use strict";
 
         var ViewModel = function(params, componentInfo) {
@@ -23,7 +23,7 @@ define(['text!./image-picker.html', 'jquery', 'framework-utilities', 'framework'
 
             self.image = args.image; //observable image
             self.settings = $.extend({
-                defaultImageUrl: '/images/choisir2.png',
+                defaultImageUrl: '/bower_components/rc.component.image-picker/dist/images/choisir2.png',
                 imageShownRatio: '16:9',
                 imageShownWidth: 635,
                 imageForLineups: false,
@@ -34,7 +34,7 @@ define(['text!./image-picker.html', 'jquery', 'framework-utilities', 'framework'
             self.concreteImage = ko.computed(function() {
                 var result = null;
 
-                var image = utilities.toJS(self.image);
+                var image = knockoutUtilities.toJS(self.image);
 
                 if (image && image.concreteImages && image.concreteImages.length) {
                     result = ko.utils.arrayFirst(
