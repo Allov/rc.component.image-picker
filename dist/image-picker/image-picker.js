@@ -15,95 +15,19 @@ define(['text!./image-picker.html', 'jquery', 'knockout-utilities', 'framework',
 
         var ViewModel = function(params, componentInfo) {
             var self = this;
-            self.activate(params);
-        };
+            self.imageUrl = params.image;
 
-        ViewModel.prototype.activate = function(args) {
-            var self = this;
-
-            self.image = args.image; //observable image
-            self.settings = $.extend({
-                defaultImageUrl: '/bower_components/rc.component.image-picker/dist/images/choisir2.png',
-                imageShownRatio: '16:9',
-                imageShownWidth: 635,
-                imageForLineups: false,
-                dimensions: [],
-                contentTypeIds: [20]
-            }, args.settings);
-
-            self.concreteImage = ko.computed(function() {
-                var result = null;
-
-                var image = knockoutUtilities.toJS(self.image);
-
-                if (image && image.concreteImages && image.concreteImages.length) {
-                    result = ko.utils.arrayFirst(
-                        image.concreteImages,
-                        isImageShown
-                    );
-                }
-
-                return result;
-            });
-
-            function isImageShown(item) {
-                return item.width === self.settings.imageShownWidth &&
-                    item.dimensionRatio === self.settings.imageShownRatio;
-            }
-
-            self.concreteImageUrl = ko.computed(function() {
-                var result = '';
-
-                if (self.concreteImage()) {
-                    result = self.concreteImage().mediaLink.href;
-                }
-
-                return result;
-            });
-
-            self.imageAlt = ko.computed(function() {
-                var result = '';
-
-                if (self.image) {
-                    if (self.image()) {
-                        result = self.image().alt;
-                    }
-                }
-
-                return result;
-            });
-
-            if (self.settings.imageForLineups) {
-                // app.on('image:imageForLineups').then(function (conceptualImage) {
-                //     self.image(conceptualImage);
-                // });
+            if (!self.imageUrl()) {
+                self.imageUrl('/bower_components/rc.component.image-picker/dist/images/choisir2.png');
             }
         };
 
         ViewModel.prototype.selectImage = function(model, jQueryEvent) {
             var self = this;
 
-            var params = {
-                conceptualImage: self.image(),
-                settings: self.settings
-            };
-            
-            framework.showDialog('images', params).then(function(image) {
-                self.image(image);
-                console.log(image);
+            framework.showDialog('images').then(function(imageUrl) {
+                self.imageUrl(imageUrl);
             });
-
-            // ImagesModal.show(args).then(function (response) {
-            //     if (response) {
-            //         if (response.conceptualImage) {
-            //             self.image(response.conceptualImage);
-            //         }
-            //     }
-            // });
-        };
-
-        ViewModel.prototype.unselectImage = function() {
-            this.image(null);
         };
 
         return {

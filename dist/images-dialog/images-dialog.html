@@ -5,12 +5,14 @@
 </div>
 
 <div class="container">
-    <h1>Sélectionnez une image</h1>
+    <h1>Select an image</h1>
     <div class="form-group" data-bind="formGroupValidationCssClass : content().image.formGroupValidationCssClass">
-        <label for="image"></label>
-        <input id="image" name="image" type="text" class="form-control" data-bind="value: content().image, valueUpdate: 'afterkeydown'" />
+        <label for="image">Image</label>
+        <select class="form-control" data-bind="options: images, optionsText: function(item) { return item.name; }, optionsValue: function(item) { return item.value; }, value: content().image, optionsCaption: 'Choose...'"></select>
         <span class="help-block" data-bind="helpBlockValidationMessage: content().image.helpBlockValidationMessage"></span>
     </div>
+
+    <img data-bind="attr: { src: content().image }"/>
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom navbar-inverse">

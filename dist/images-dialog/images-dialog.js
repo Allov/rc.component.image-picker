@@ -4,6 +4,21 @@ define(["text!./images-dialog.html", "knockout"], function(template, ko) {
 
         self.title = params.title;
 
+        self.images = ko.observableArray([
+                {
+                    name: '1',
+                    value: '/bower_components/rc.component.image-picker/dist/images/1.jpg'
+                },
+                {
+                    name: '2',
+                    value: '/bower_components/rc.component.image-picker/dist/images/2.jpg'
+                },
+                {
+                    name: '3',
+                    value: '/bower_components/rc.component.image-picker/dist/images/3.jpg'
+                }
+            ]);
+
         self.content = ko.validatedObservable({
             image: ko.observable('').extend({
                 required: {
