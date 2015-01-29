@@ -26,7 +26,9 @@ define(['text!./image-picker.html', 'jquery', 'knockout-utilities', 'framework',
             var self = this;
 
             framework.showDialog('images').then(function(imageUrl) {
-                self.imageUrl(imageUrl);
+                if (imageUrl) {
+                    self.imageUrl(imageUrl);
+                }
             });
         };
 
