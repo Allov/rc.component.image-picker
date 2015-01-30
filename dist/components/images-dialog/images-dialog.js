@@ -1,6 +1,7 @@
 define(["text!./images-dialog.html", "knockout"], function(template, ko) {
     var ViewModel = function(params, componentInfo) {
         var self = this;
+        var undef;
 
         self.title = params.title;
 
@@ -20,10 +21,20 @@ define(["text!./images-dialog.html", "knockout"], function(template, ko) {
             ]);
 
         self.content = ko.validatedObservable({
-            image: ko.observable('').extend({
+            image: ko.observable(undef).extend({
                 required: {
                     message: "L'image est requise. "
                 },
+                successValidatingMessage: {
+                    validatingMessage: "Validation en cours...",
+                    validMessage: "La valeur est valide!"
+                }
+            }),
+            title: ko.observable('').extend({
+                required: {
+                    message: "Le titre est requis. "
+                },
+                exampleAsync: {},
                 successValidatingMessage: {
                     validatingMessage: "Validation en cours...",
                     validMessage: "La valeur est valide!"

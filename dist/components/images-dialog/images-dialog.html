@@ -6,12 +6,16 @@
 
 <div class="container">
     <h1>Select an image</h1>
+    <div class="form-group" data-bind="formGroupValidationCssClass : content().title.formGroupValidationCssClass">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" data-bind="value: content().title, valueUpdate: 'afterkeydown'">
+        <span class="help-block" data-bind="helpBlockValidationMessage: content().title.helpBlockValidationMessage"></span>
+    </div>
     <div class="form-group" data-bind="formGroupValidationCssClass : content().image.formGroupValidationCssClass">
         <label for="image">Image</label>
         <select class="form-control" data-bind="options: images, optionsText: function(item) { return item.name; }, optionsValue: function(item) { return item.value; }, value: content().image, optionsCaption: 'Choose...'"></select>
         <span class="help-block" data-bind="helpBlockValidationMessage: content().image.helpBlockValidationMessage"></span>
     </div>
-
     <img data-bind="attr: { src: content().image }"/>
 </div>
 
