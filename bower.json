@@ -14,7 +14,7 @@
     "tests"
   ],
   "dependencies": {
-    "rc.framework.js": "~0.1.16",
-    "rc.knockout.utilities": "~0.1.2"
+    "rc.knockout.utilities": "~0.1.2",
+    "rc.component.dialoger": "~0.1.9"
   }
 }

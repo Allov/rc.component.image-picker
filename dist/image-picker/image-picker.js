@@ -9,8 +9,8 @@
     }
 */
 
-define(['text!./image-picker.html', 'jquery', 'knockout-utilities', 'framework', 'knockout'],
-    function(template, $, knockoutUtilities, framework, ko) {
+define(['text!./image-picker.html', 'jquery', 'knockout-utilities', 'dialoger', 'knockout'],
+    function(template, $, knockoutUtilities, dialoger, ko) {
         "use strict";
 
         var ViewModel = function(params, componentInfo) {
@@ -25,7 +25,7 @@ define(['text!./image-picker.html', 'jquery', 'knockout-utilities', 'framework',
         ViewModel.prototype.selectImage = function(model, jQueryEvent) {
             var self = this;
 
-            framework.showDialog('images').then(function(imageUrl) {
+            dialoger.showDialog('images').then(function(imageUrl) {
                 if (imageUrl) {
                     self.imageUrl(imageUrl);
                 }
