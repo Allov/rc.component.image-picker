@@ -18,7 +18,7 @@ define(['text!./image-picker.html', 'jquery', 'knockout-utilities', 'dialoger', 
             self.imageUrl = params.image;
 
             if (!self.imageUrl()) {
-                self.imageUrl('/bower_components/rc.component.image-picker/dist/components/images/choisir2.png');
+                self.imageUrl('/bower_components/rc.component.image-picker/dist/images/choisir2.png');
             }
         };
 
