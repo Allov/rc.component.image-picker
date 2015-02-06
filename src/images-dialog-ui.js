@@ -1,22 +1,29 @@
-define(["text!./images-dialog.html", "knockout"], function(template, ko) {
+define(["text!./images-dialog.html", "knockout", 'configs'], function(template, ko, configs) {
     var ViewModel = function(params, componentInfo) {
         var self = this;
         var undef;
 
         self.title = params.title;
 
+        var imagesBasePath = '/bower_components/rc.component.image-picker/src/images/';
+
+            //todo: should we throw instead?
+            if(configs.imagePicker && configs.imagePicker.imagesBasePath){
+                imagesBasePath = configs.imagePicker.imagesBasePath;
+            }
+
         self.images = ko.observableArray([
                 {
                     name: '1',
-                    value: '/bower_components/rc.component.image-picker/dist/images/1.jpg'
+                    value: imagesBasePath + 'images/1.jpg'
                 },
                 {
                     name: '2',
-                    value: '/bower_components/rc.component.image-picker/dist/images/2.jpg'
+                    value: imagesBasePath + 'images/2.jpg'
                 },
                 {
                     name: '3',
-                    value: '/bower_components/rc.component.image-picker/dist/images/3.jpg'
+                    value: imagesBasePath + 'images/3.jpg'
                 }
             ]);
 

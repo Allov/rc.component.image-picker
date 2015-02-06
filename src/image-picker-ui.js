@@ -9,16 +9,24 @@
     }
 */
 
-define(['text!./image-picker.html', 'jquery', 'knockout-utilities', 'dialoger', 'knockout'],
-    function(template, $, knockoutUtilities, dialoger, ko) {
+define(['text!./image-picker.html', 'jquery', 'knockout-utilities', 'dialoger', 'knockout', 'configs'],
+    function(template, $, knockoutUtilities, dialoger, ko, configs) {
         "use strict";
 
         var ViewModel = function(params, componentInfo) {
             var self = this;
+
+            var imagesBasePath = '/bower_components/rc.component.image-picker/src/images/';
+
+            //todo: should we throw instead?
+            if(configs.imagePicker && configs.imagePicker.imagesBasePath){
+                imagesBasePath = configs.imagePicker.imagesBasePath;
+            }
+
             self.imageUrl = params.image;
 
             if (!self.imageUrl()) {
-                self.imageUrl('/bower_components/rc.component.image-picker/dist/images/choisir2.png');
+                self.imageUrl(imagesBasePath + 'choisir2.png');
             }
         };
 
