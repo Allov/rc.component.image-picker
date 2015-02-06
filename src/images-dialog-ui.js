@@ -15,15 +15,15 @@ define(["text!./images-dialog.html", "knockout", 'configs'], function(template, 
         self.images = ko.observableArray([
                 {
                     name: '1',
-                    value: imagesBasePath + 'images/1.jpg'
+                    value: imagesBasePath + '1.jpg'
                 },
                 {
                     name: '2',
-                    value: imagesBasePath + 'images/2.jpg'
+                    value: imagesBasePath + '2.jpg'
                 },
                 {
                     name: '3',
-                    value: imagesBasePath + 'images/3.jpg'
+                    value: imagesBasePath + '3.jpg'
                 }
             ]);
 
