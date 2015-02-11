@@ -9,7 +9,7 @@
     }
 */
 
-define(['text!./image-picker.html', 'jquery', 'knockout-utilities', 'dialoger', 'knockout', 'configs'],
+define(['text!./rc.component.image-picker.html', 'jquery', 'knockout-utilities', 'dialoger', 'knockout', 'configs'],
     function(template, $, knockoutUtilities, dialoger, ko, configs) {
         "use strict";
 

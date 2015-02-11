@@ -1,4 +1,4 @@
-define(["text!./images-dialog.html", "knockout", 'configs'], function(template, ko, configs) {
+define(["text!./rc.component.images-dialog.html", "knockout", 'configs'], function(template, ko, configs) {
     var ViewModel = function(params, componentInfo) {
         var self = this;
         var undef;
