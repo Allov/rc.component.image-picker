@@ -14,7 +14,7 @@
     "tests"
   ],
   "dependencies": {
-    "rc.knockout.utilities": "~0.1.2",
-    "rc.component.dialoger": "~0.1.9"
+    "knockout-utilities": "~0.1.2",
+    "knockout-dialoger": "~0.1.9"
   }
 }

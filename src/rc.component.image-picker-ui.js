@@ -19,7 +19,7 @@ define(['text!./rc.component.image-picker.html', 'jquery', 'knockout-utilities',
             var imagesBasePath = '/bower_components/rc.component.image-picker/src/images/';
 
             //todo: should we throw instead?
-            if(configs.imagePicker && configs.imagePicker.imagesBasePath){
+            if (configs.imagePicker && configs.imagePicker.imagesBasePath) {
                 imagesBasePath = configs.imagePicker.imagesBasePath;
             }
 
@@ -32,6 +32,13 @@ define(['text!./rc.component.image-picker.html', 'jquery', 'knockout-utilities',
 
         ViewModel.prototype.selectImage = function(model, jQueryEvent) {
             var self = this;
+
+            if (!ko.components.isRegistered('images-dialog')) {
+                dialoger.registerDialog('images', {
+                    title: 'Select an image',
+                    basePath: 'bower_components/rc.component.image-picker/src'
+                });
+            }
 
             dialoger.showDialog('images').then(function(imageUrl) {
                 if (imageUrl) {
