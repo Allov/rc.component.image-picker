@@ -1,30 +1,24 @@
 # Image Picker
 
-## Table of content
+This is a demo component based on the [koco generator](https://github.com/Allov/generator-koco) conventions. It has no purpose other than demoing an external bower component.
 
-- [Quick start](#quick-start)
-- [Register components](#register-components)
-- [Usages](#usages)
+## Installation
 
-## Quick start
+`bower install rc.component.image-picker`.
 
-- Install with [Bower](http://bower.io): `bower install rc.component.image-picker`.
+## Usage
 
-## Register components
+```javascript
+var dialoger = require('dialoger');
+framework.registerDialog('images', {
+    title: 'Select an image',
+    isBower: true
+});
 
-In the `app/startup.js` file, add these lines of code before the `framework.init()` function:
+var koUtilities = require('knockout-utilities');
+koUtilities.registerComponent('image-picker', {
+    isBower: true
+});
+```
 
-    framework.registerDialog({
-        name: 'images',
-        title: 'Select an image',
-        isBower: true
-    });
-
-    framework.registerComponent({
-        name: 'image-picker',
-        isBower: true
-    });
-
-## Usages
-
-To use the component, just add the `<image-picker></image-picker>` tag in the html file you want to use it.
+To use the component, just add the `<rc.components.image-picker></rc.components.image-picker>` tag in the html file you want to use it.
