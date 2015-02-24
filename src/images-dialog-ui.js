@@ -7,25 +7,23 @@ define(["text!./images-dialog.html", "knockout", 'configs'], function(template, 
 
         var imagesBasePath = (configs.baseUrl || '') + '/bower_components/rc.component.image-picker/src/images/';
 
-            //todo: should we throw instead?
-            if(configs.imagePicker && configs.imagePicker.imagesBasePath){
-                imagesBasePath = configs.imagePicker.imagesBasePath;
-            }
+        //todo: should we throw instead?
+        if (configs.imagePicker && configs.imagePicker.imagesBasePath) {
+            imagesBasePath = configs.imagePicker.imagesBasePath;
+        }
 
-        self.images = ko.observableArray([
-                {
-                    name: '1',
-                    value: imagesBasePath + '1.jpg'
-                },
-                {
-                    name: '2',
-                    value: imagesBasePath + '2.jpg'
-                },
-                {
-                    name: '3',
-                    value: imagesBasePath + '3.jpg'
-                }
-            ]);
+        self.titleFocused = ko.observable(true);
+
+        self.images = ko.observableArray([{
+            name: '1',
+            value: imagesBasePath + '1.jpg'
+        }, {
+            name: '2',
+            value: imagesBasePath + '2.jpg'
+        }, {
+            name: '3',
+            value: imagesBasePath + '3.jpg'
+        }]);
 
         self.content = ko.validatedObservable({
             image: ko.observable(undef).extend({

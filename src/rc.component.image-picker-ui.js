@@ -23,6 +23,7 @@ define(['text!./rc.component.image-picker.html', 'jquery', 'knockout-utilities',
                 imagesBasePath = configs.imagePicker.imagesBasePath;
             }
 
+            self.focused = ko.observable(false);
             self.imageUrl = params.image;
 
             if (!self.imageUrl()) {
@@ -44,6 +45,8 @@ define(['text!./rc.component.image-picker.html', 'jquery', 'knockout-utilities',
                 if (imageUrl) {
                     self.imageUrl(imageUrl);
                 }
+
+                self.focused(true);
             });
         };
 

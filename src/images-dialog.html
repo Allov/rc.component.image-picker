@@ -4,31 +4,33 @@
     </div>
 </div>
 
-<div class="container">
-    <h1>Select an image</h1>
-    <div class="form-group" data-bind="formGroupValidationCssClass : content().title.formGroupValidationCssClass">
-        <label for="title">Title</label>
-        <input type="text" class="form-control" data-bind="value: content().title, valueUpdate: 'afterkeydown'">
-        <span class="help-block" data-bind="helpBlockValidationMessage: content().title.helpBlockValidationMessage"></span>
-    </div>
-    <div class="form-group" data-bind="formGroupValidationCssClass : content().image.formGroupValidationCssClass">
-        <label for="image">Image</label>
-        <select class="form-control" data-bind="options: images, optionsText: function(item) { return item.name; }, optionsValue: function(item) { return item.value; }, value: content().image, optionsCaption: 'Choose...'"></select>
-        <span class="help-block" data-bind="helpBlockValidationMessage: content().image.helpBlockValidationMessage"></span>
-    </div>
-    <img data-bind="attr: { src: content().image }"/>
-</div>
-
-<nav class="navbar navbar-default navbar-fixed-bottom navbar-inverse">
+<form data-bind="submit: save">
     <div class="container">
-        <button class="btn btn-default post-button pull-left" data-bind="click: close, clickBubble: false">
-            <i class="fa fa-arrow-left"></i>
-            <span>Close</span>
-        </button>
-
-        <button class="btn btn-default btn-success post-button pull-left" data-bind="click: save, clickBubble: false">
-            <i class="fa fa-arrow-left"></i>
-            <span>Save</span>
-        </button>
+        <h1 id="dialog-title">Select an image</h1>
+        <div class="form-group" data-bind="formGroupValidationCssClass : content().title.formGroupValidationCssClass">
+            <label id="image-title" for="title">Image title</label>
+            <input type="text" class="form-control" data-bind="value: content().title, valueUpdate: 'afterkeydown', hasFocus: titleFocused, attr: { 'aria-required': true, 'aria-autocomplete': 'none', 'aria-labelledby': 'image-title', 'aria-invalid': content().image.formGroupValidationCssClass() == 'has-error' }">
+            <span class="help-block" data-bind="helpBlockValidationMessage: content().title.helpBlockValidationMessage"></span>
+        </div>
+        <div class="form-group" data-bind="formGroupValidationCssClass : content().image.formGroupValidationCssClass">
+            <label id="select-image" for="image">Select an image from the list</label>
+            <select class="form-control" data-bind="options: images, optionsText: function(item) { return item.name; }, optionsValue: function(item) { return item.value; }, value: content().image, optionsCaption: 'Choose...', attr: { 'aria-required': true, 'aria-labelledby': 'select-image', 'aria-invalid': content().image.formGroupValidationCssClass() == 'has-error' }"></select>
+            <span class="help-block" data-bind="helpBlockValidationMessage: content().image.helpBlockValidationMessage"></span>
+        </div>
+        <img data-bind="attr: { src: content().image }" />
     </div>
-</nav>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom navbar-inverse">
+        <div class="container">
+            <button type="button" class="btn btn-default post-button pull-left" data-bind="click: close, clickBubble: false">
+                <i class="fa fa-arrow-left"></i>
+                <span>Close</span>
+            </button>
+
+            <button type="submit" class="btn btn-default btn-success post-button pull-left">
+                <i class="fa fa-arrow-left"></i>
+                <span>Save</span>
+            </button>
+        </div>
+    </nav>
+</form>
