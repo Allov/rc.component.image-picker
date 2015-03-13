@@ -41,7 +41,7 @@ define(['text!./rc.component.image-picker.html', 'jquery', 'knockout-utilities',
                 });
             }
 
-            dialoger.showDialog('images').then(function(imageUrl) {
+            dialoger.show('images').then(function(imageUrl) {
                 if (imageUrl) {
                     self.imageUrl(imageUrl);
                 }
