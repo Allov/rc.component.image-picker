@@ -5,7 +5,7 @@ define(["text!./images-dialog.html", "knockout", 'configs'], function(template, 
 
         self.title = params.title;
 
-        var imagesBasePath = (configs.baseUrl || '') + '/bower_components/rc.component.image-picker/src/images/';
+        var imagesBasePath = (configs.baseUrl || '') + 'bower_components/rc.component.image-picker/src/images/';
 
         //todo: should we throw instead?
         if (configs.imagePicker && configs.imagePicker.imagesBasePath) {
