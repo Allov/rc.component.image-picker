@@ -1,3 +1,6 @@
+// Copyright (c) CBC/Radio-Canada. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
 define(["text!./images-dialog.html", "knockout", 'configs'], function(template, ko, configs) {
     var ViewModel = function(params, componentInfo) {
         var self = this;

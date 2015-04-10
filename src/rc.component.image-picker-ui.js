@@ -1,3 +1,6 @@
+// Copyright (c) CBC/Radio-Canada. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
 /*
     TODO: Faire un concreteiamgeselector (celui-ci étant un conceptualImageSelector).. 
     renommer les fichiers et faire les mod. nécessaires
