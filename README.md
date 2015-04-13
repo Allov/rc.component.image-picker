@@ -1,6 +1,6 @@
 # Image Picker
 
-This is a demo component based on the [koco generator](https://github.com/Allov/generator-koco) conventions. It has no purpose other than demoing an external bower component.
+This is a demo component based on the [koco generator](https://github.com/cbcrc/generator-koco) conventions. It has no purpose other than demoing an external bower component.
 
 ## Installation
 

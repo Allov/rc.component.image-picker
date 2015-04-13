@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Allov/rc.component.image-picker.git"
+    "url": "https://github.com/cbcrc/rc.component.image-picker.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Allov/rc.component.image-picker/issues"
+    "url": "https://github.com/cbcrc/rc.component.image-picker/issues"
   },
-  "homepage": "https://github.com/Allov/rc.component.image-picker"
+  "homepage": "https://github.com/cbcrc/rc.component.image-picker"
 }

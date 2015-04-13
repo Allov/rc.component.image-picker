@@ -1,9 +1,9 @@
 {
   "name": "rc.component.image-picker",
   "version": "0.1.0",
-  "homepage": "https://github.com/Allov/rc.component.image-picker",
+  "homepage": "https://github.com/cbcrc/rc.component.image-picker",
   "authors": [
-    "Allov"
+    "Frédérik Charest & Maxime Séguin"
   ],
   "license": "MIT",
   "ignore": [
